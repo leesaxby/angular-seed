@@ -22,7 +22,10 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.tmpl.html$/,
+                test: /\.html$/,
+                exclude: [
+                    path.resolve(__dirname, './src/index.html'),
+                ],
                 use: [
                     {loader: 'ngtemplate-loader'},
                     {loader: 'html-loader'}
@@ -49,6 +52,7 @@ module.exports = {
     devServer: {
         contentBase: path.resolve(__dirname, './dist'),
         host: '0.0.0.0',
+        disableHostCheck: true,
         port: 9999
     },
     plugins: [

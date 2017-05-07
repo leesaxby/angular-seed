@@ -1,7 +1,10 @@
 import angular from 'angular';
-import mainComp from './components/main/main.js';
+import router from 'angular-ui-router';
+import components from './components/components.module.js';
 
-angular.module('main', [])
-       .component('mainComponent', mainComp);
+angular.module('app', [router, components])
+       .config(function ($locationProvider) {
+              $locationProvider.hashPrefix('');
+        });
 
-angular.bootstrap(document, ['main']);
+angular.bootstrap(document, ['app'])
