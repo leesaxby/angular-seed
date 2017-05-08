@@ -5,7 +5,7 @@ import welcome from './welcome/welcome.component.js';
 export default angular.module('main', [router])
         .component('welcome', welcome)
         .config(function ($stateProvider) {
-            stateProvider
+            $stateProvider
                 .state('main', {
                     url: '/main',
                     component: 'welcome'
